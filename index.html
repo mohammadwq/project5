@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>Rest-Countries-Api</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h2>Where in the world ? </h2>
+            </div>
+            <div id="toggle">
+                <span class="mode">light</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="containerSearch">
+                <div class="searchSection">
+                    <div class="search">
+                        <input type="search" placeholder="search for a country" name="" id="">
+                    </div>
+                </div>
+                <div class="selectBox">
+                    <div class="selected">select</div>
+                    <div class="optionContainer">
+                        <div class="option">
+                            <input type="radio" class="radio" id="All" name="All"/>
+                            <label  for="All"> All</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" class="radio" id="Americas" name="Americas"/>
+                            <label  for="Americas"> Americas</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" class="radio" id="Asia" name="Asia"/>
+                            <label  for="Asia"> Asia</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" class="radio" id="Africa" name="Africa"/>
+                            <label  for="Africa"> Africa</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" class="radio" id="Europe" name="Europe"/>
+                            <label  for="Europe"> Europe</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" class="radio" id="Oceania" name="Oceania"/>
+                            <label  for="Oceania"> Oceania</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" class="radio" id="Antarctic" name="Antarctic"/>
+                            <label  for="Antarctic">Antarctic</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="countries show"></div>
+        </div>
+        <div class="model"></div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
+

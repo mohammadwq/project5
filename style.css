@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --Input: hsl(0, 0%, 52%);
+  --elements:hsl(209, 23%, 22%);
+  --background: hsl(207, 26%, 17%);
+  --text: hsl(0, 0%, 100%);
+  background-color: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body.dark {
+  --Input: hsl(0, 0%, 52%);
+  --background: hsl(0, 0%, 98%);
+  --text: hsl(200, 15%, 8%);
+  --elements: hsl(0, 0%, 100%);
+  background-color: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.container {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+header {
+  background-color: var(--elements);
+  color: var(--text);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 18px;
+}
+header .container .logo {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 375px) {
+  header .container .logo {
+    font-size: 12px;
+  }
+}
+header .container #toggle {
+  font-size: 22px;
+}
+@media (max-width: 375px) {
+  header .container #toggle {
+    font-size: 14px;
+  }
+}
+
+main .container .containerSearch {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 40px 0 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 80px;
+}
+main .container .containerSearch .searchSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .container .containerSearch .searchSection .search input {
+  border-style: none;
+  padding: 15px 30px;
+  width: 200px;
+  background-color: var(--elements);
+  color: var(--text);
+  outline: none;
+}
+main .container .containerSearch .selectBox {
+  text-align: center;
+  width: 250px;
+  background-color: var(--elements);
+  color: var(--text);
+  overflow: hidden;
+  z-index: 99;
+}
+main .container .containerSearch .selectBox .selected {
+  background-color: var(--elements);
+  color: var(--text);
+  order: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+main .container .containerSearch .selectBox .optionContainer {
+  text-align: center;
+  background-color: var(--elements);
+  color: var(--text);
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+  max-height: 10px;
+  order: 1;
+}
+main .container .containerSearch .selectBox .optionContainer .option {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+main .container .containerSearch .selectBox .optionContainer .option:hover {
+  background-color: #414b57;
+}
+main .container .containerSearch .selectBox .optionContainer .option .radio {
+  display: none;
+}
+main .container .containerSearch .selectBox .optionContainer .option .label {
+  cursor: pointer;
+}
+main .container .containerSearch .selectBox .optionContainer.done {
+  max-height: 220px;
+  opacity: 1;
+  overflow-y: scroll;
+}
+main .container .containerSearch .selectBox .optionContainer::-webkit-scrollbar {
+  width: 8px;
+  background: var(--background);
+  border-radius: 0 8px 8px 0;
+}
+main .container .containerSearch .selectBox .optionContainer::-webkit-scrollbar-thumb {
+  background: var(--Input);
+  border-radius: 0 8px 8px 0;
+}
+main .container .countries.show {
+  display: block;
+}
+main .container .countries.show .boxs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+main .container .countries.show .boxs .box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--elements);
+  color: var(--text);
+}
+main .container .countries.show .boxs .box img {
+  width: 100%;
+  height: 200px;
+}
+main .container .countries.show .boxs .box .textContent {
+  margin: 15px 30px;
+}
+main .container .countries.show .boxs .box .textContent h4 {
+  margin: 5px 0;
+}
+main .container .countries.show .boxs .box .textContent h2 {
+  margin: 20px 0;
+  cursor: pointer;
+}
+main .container .countries {
+  display: none;
+}
+main .model {
+  display: none;
+}
+main .model .back {
+  background-color: var(--elements);
+  color: var(--text);
+  outline: none;
+  border-style: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 48px;
+}
+main .model .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  color: var(--text);
+}
+@media (max-width: 375px) {
+  main .model .container {
+    gap: 10px;
+  }
+}
+main .model .container .image {
+  max-width: 275px;
+  max-height: 300px;
+  margin-bottom: 48px;
+  margin-right: 80px;
+}
+@media (max-width: 375px) {
+  main .model .container .image {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+main .model .container .image img {
+  min-width: 100%;
+  min-height: 100%;
+}
+main .model .container .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 48px;
+  line-height: 28px;
+  flex: 1;
+  font-size: 20px;
+}
+@media (max-width: 375px) {
+  main .model .container .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 16px;
+  }
+}
+main .model .container .details .left {
+  width: 65%;
+}
+main .model .container .details .left .name {
+  margin-bottom: 20px;
+}
+main .model .container .details .right {
+  flex: 1;
+}
+main .model .container .details .bottom {
+  width: 50%;
+}
+@media (max-width: 375px) {
+  main .model .container .details .bottom {
+    margin-bottom: 10px;
+  }
+}
+main .model.show {
+  display: block;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  z-index: 100;
+}/*# sourceMappingURL=style.css.map */
